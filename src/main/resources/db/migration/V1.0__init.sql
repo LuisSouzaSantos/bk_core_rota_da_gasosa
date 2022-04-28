@@ -3,6 +3,7 @@ use rotadagasosa;
 create table `available_time`(
 	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
+    `visible` BIT(1) NOT NULL,
     UNIQUE(name),
     PRIMARY KEY (id)
 );
@@ -10,6 +11,7 @@ create table `available_time`(
 create table `flag`(
 	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
+    `visible` BIT(1) NOT NULL,
     UNIQUE(name),
     PRIMARY KEY (id)
 );
@@ -17,6 +19,7 @@ create table `flag`(
 create table `fuel`(
 	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
+    `visible` BIT(1) NOT NULL,
     UNIQUE(name),
     PRIMARY KEY (id)
 );
@@ -24,6 +27,7 @@ create table `fuel`(
 create table `promotion`(
 	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
+    `visible` BIT(1) NOT NULL,
     UNIQUE(name),
     PRIMARY KEY (id)
 );
@@ -31,8 +35,16 @@ create table `promotion`(
 create table `service`(
 	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
+    `visible` BIT(1) NOT NULL,
     UNIQUE(name),
     PRIMARY KEY (id)
+);
+
+create table `administrator` (
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`email` VARCHAR(255) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
 );
 
 create table `gas_station`(
@@ -44,8 +56,8 @@ create table `gas_station`(
     `cep` VARCHAR(8) NOT NULL,
     `address` VARCHAR(255) NOT NULL,
 	`address_number` VARCHAR(255) NOT NULL,
-	`latitude` DECIMAL(5,5) NOT NULL,
-    `longitude` DECIMAL(5,5) NOT NULL,
+	`latitude` FLOAT(8,4) NOT NULL,
+    `longitude` FLOAT(8,4) NOT NULL,
     `active` BIT(1) NOT NULL,
     `verified` BIT(1) NOT NULL,
     `deleted`  BIT(1) NOT NULL,
@@ -108,8 +120,7 @@ create table `service_details`(
 	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
     `start_time` DATETIME NOT NULL,
     `end_time` DATETIME NOT NULL,
-    `occurrence` BIT(1) NOT NULL,
-    `day_of_week` VARCHAR(9) NOT NULL,
+    `operating_days` VARCHAR(255) NOT NULL,
     `available` BIT(1) NOT NULL,
     `service_id` BIGINT(20) NOT NULL,
     `gas_station_id` BIGINT(20) NOT NULL,
@@ -139,4 +150,28 @@ create table `used_gas_station`(
     CONSTRAINT FK_UsedGasStation_GasStation FOREIGN KEY (gas_station_id) REFERENCES `gas_station` (id),
     CONSTRAINT FK_UsedGasStation_Customer FOREIGN KEY (customer_id) REFERENCES `customer` (id),
 	PRIMARY KEY (id)
+);
+
+create table `role`(
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(255) NOT NULL,
+	`admin` BIT(1) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+INSERT INTO role (name, admin) values ('GAS_STATION', 0);
+INSERT INTO role (name, admin) values ('CUSTOMER', 0);
+
+create table `customer_role`(
+	`customer_id` BIGINT(20) NOT NULL,
+	`role_id` BIGINT(20) NOT NULL,
+	CONSTRAINT FK_CustomerRole_Customer FOREIGN KEY (customer_id) REFERENCES `customer` (id),
+	CONSTRAINT FK_CustomerRole_Role FOREIGN KEY (role_id) REFERENCES `role` (id)
+);
+
+create table `gas_station_role`(
+	`gas_station_id` BIGINT(20) NOT NULL,
+	`role_id` BIGINT(20) NOT NULL,
+	CONSTRAINT FK_GasStationRole_GasStation FOREIGN KEY (gas_station_id) REFERENCES `gas_station` (id),
+	CONSTRAINT FK_GasStationRole_Role FOREIGN KEY (role_id) REFERENCES `role` (id)
 );

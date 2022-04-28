@@ -14,12 +14,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fesa.rotadagasosa.model.AvailableTime;
+import br.com.fesa.rotadagasosa.model.PathAuthentication;
 
 @CrossOrigin
 @RestController
 @RequestMapping("/availableTime")
 public class AvailableTimeController {
 
+	public final static List<PathAuthentication> APIS_GET = Arrays.asList();
+	public final static List<PathAuthentication> APIS_POST = Arrays.asList();
+	public final static List<PathAuthentication> APIS_PUT = Arrays.asList();
+	public final static List<PathAuthentication> APIS_DELETE = Arrays.asList();
+
+	
 	@PostMapping
 	public ResponseEntity<AvailableTime> saveAvailableTime(@RequestBody AvailableTime availableTime){
 		return ResponseEntity.ok(flagAvailableTime());

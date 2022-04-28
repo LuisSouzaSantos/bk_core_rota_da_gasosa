@@ -1,5 +1,6 @@
 package br.com.fesa.rotadagasosa.controllers;
 
+import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -76,8 +77,8 @@ public class CustomerController {
 		UsedGasStation usedGasStation = new UsedGasStation();
 		usedGasStation.setId(1L);
 		usedGasStation.setDate(ZonedDateTime.now());
-		usedGasStation.setFuelAmount(23.34);
-		usedGasStation.setLiterPrice(3.20);
+		usedGasStation.setFuelAmount(new BigDecimal(23.34));
+		usedGasStation.setLiterPrice(new BigDecimal(23.20));
 		usedGasStation.setGasStation(null);
 		
 		customer.setUsedGasStationList(Arrays.asList(usedGasStation));

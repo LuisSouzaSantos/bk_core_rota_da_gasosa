@@ -1,5 +1,6 @@
 package br.com.fesa.rotadagasosa.controllers;
 
+import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -74,8 +75,6 @@ public class GasStationController {
 		gasStation.setAddressNumber("100");
 		gasStation.setLatitude(12.34);
 		gasStation.setLongitude(121.34);
-		gasStation.setAvailableTimeStart(ZonedDateTime.now());
-		gasStation.setAvailableTimeEnd(ZonedDateTime.now());
 		gasStation.setActive(true);
 		gasStation.setVerified(true);
 		
@@ -88,7 +87,7 @@ public class GasStationController {
 		fuelDetails.setId(1L);
 		fuelDetails.setFuel(fuel);
 		fuelDetails.setAvailable(true);
-		fuelDetails.setPrice(2.34);
+		fuelDetails.setPrice(new BigDecimal(1.14));
 		
 		Service service = new Service();
 		service.setId(1L);
@@ -98,7 +97,7 @@ public class GasStationController {
 		ServiceDetails serviceDetails = new ServiceDetails();
 		serviceDetails.setId(1L);
 		serviceDetails.setAvailable(true);
-		serviceDetails.setOperatingDays(Arrays.asList(DayOfWeek.MONDAY, DayOfWeek.SATURDAY));
+		serviceDetails.setOperatingDays(Arrays.asList(DayOfWeek.MONDAY, DayOfWeek.SATURDAY).toString());
 		serviceDetails.setStartTime(ZonedDateTime.now());
 		serviceDetails.setEndTime(ZonedDateTime.now());
 		serviceDetails.setService(service);
@@ -110,7 +109,7 @@ public class GasStationController {
 		
 		AvailableTimeDetails availableTimeDetails = new AvailableTimeDetails();
 		availableTimeDetails.setId(1L);
-		availableTimeDetails.setOperatingsDay(Arrays.asList(DayOfWeek.MONDAY, DayOfWeek.SATURDAY));
+		availableTimeDetails.setDayOfWeek(DayOfWeek.MONDAY);
 		availableTimeDetails.setStartTime(ZonedDateTime.now());
 		availableTimeDetails.setEndTime(ZonedDateTime.now());
 		availableTimeDetails.setAvailableTime(availableTime);
