@@ -12,14 +12,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import br.com.fesa.rotadagasosa.controllers.Controller;
 import br.com.fesa.rotadagasosa.filter.AuthenticationFilter;
 import br.com.fesa.rotadagasosa.service.LoginService;
 import br.com.fesa.rotadagasosa.service.TokenService;
-
 
 @Configuration
 @EnableWebSecurity
