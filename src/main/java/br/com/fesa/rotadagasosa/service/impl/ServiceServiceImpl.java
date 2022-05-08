@@ -2,8 +2,6 @@ package br.com.fesa.rotadagasosa.service.impl;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.fesa.rotadagasosa.exception.ServiceException;
@@ -14,7 +12,7 @@ import br.com.fesa.rotadagasosa.repository.ServiceRepository;
 import br.com.fesa.rotadagasosa.service.ServiceService;
 import br.com.fesa.rotadagasosa.service.validator.ServiceValidator;
 
-@Entity
+@org.springframework.stereotype.Service
 public class ServiceServiceImpl implements ServiceService {
 
 	@Autowired
