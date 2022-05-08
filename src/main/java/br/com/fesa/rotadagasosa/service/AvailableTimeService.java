@@ -4,13 +4,13 @@ import java.util.List;
 
 import br.com.fesa.rotadagasosa.exception.AvailableTimeException;
 import br.com.fesa.rotadagasosa.model.AvailableTime;
-import br.com.fesa.rotadagasosa.model.form.dto.AvailableTimeForm;
+import br.com.fesa.rotadagasosa.model.form.dto.BaseAdministratorItemForm;
 
 public interface AvailableTimeService {
 
-	public AvailableTime save(AvailableTimeForm form) throws AvailableTimeException;
+	public AvailableTime save(BaseAdministratorItemForm form) throws AvailableTimeException;
 	
-	public AvailableTime edit(AvailableTime availableTime);
+	public AvailableTime edit(AvailableTime availableTime) throws AvailableTimeException;
 	
 	public void delete(Long id) throws AvailableTimeException;
 	

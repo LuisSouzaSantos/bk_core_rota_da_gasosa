@@ -1,9 +1,9 @@
 package br.com.fesa.rotadagasosa.model.form.dto;
 
-public class AvailableTimeForm {
+public class BaseAdministratorItemForm {
 
 	private String name;
-	private boolean visible;
+	private boolean visible = true;
 	
 	public String getName() {
 		return name;

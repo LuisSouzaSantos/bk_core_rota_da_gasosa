@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import br.com.fesa.rotadagasosa.exception.AvailableTimeException;
 import br.com.fesa.rotadagasosa.message.AvailableTimeMessage;
 import br.com.fesa.rotadagasosa.model.AvailableTime;
-import br.com.fesa.rotadagasosa.model.form.dto.AvailableTimeForm;
+import br.com.fesa.rotadagasosa.model.form.dto.BaseAdministratorItemForm;
 import br.com.fesa.rotadagasosa.repository.AvailableTimeRepository;
 import br.com.fesa.rotadagasosa.service.AvailableTimeService;
 import br.com.fesa.rotadagasosa.service.validator.AvailableTimeValidator;
@@ -24,7 +24,7 @@ public class AvailableTimeServiceImpl implements AvailableTimeService {
 	
 	
 	@Override
-	public AvailableTime save(AvailableTimeForm form) throws AvailableTimeException {
+	public AvailableTime save(BaseAdministratorItemForm form) throws AvailableTimeException {
 		availableTimeValidator.validateForm(form);
 		
 		AvailableTime retrievedAvailableTimeByName = getByName(form.getName());
@@ -39,8 +39,17 @@ public class AvailableTimeServiceImpl implements AvailableTimeService {
 	}
 
 	@Override
-	public AvailableTime edit(AvailableTime availableTime) {
-		return null;
+	public AvailableTime edit(AvailableTime availableTime) throws AvailableTimeException {
+		availableTimeValidator.validateAvailableTimeFields(availableTime);
+		
+		AvailableTime retrievedAvailableTimeByName = getByName(availableTime.getName());
+		
+		if((retrievedAvailableTimeByName != null) && !availableTime.getId().equals(retrievedAvailableTimeByName.getId())) { throw new AvailableTimeException(AvailableTimeMessage.ERROR_DUPLICATE); }
+		
+		retrievedAvailableTimeByName.setName(availableTime.getName());
+		retrievedAvailableTimeByName.setVisible(availableTime.getVisible());
+		
+		return availableTimeRepository.save(retrievedAvailableTimeByName);
 	}
 
 	@Override
