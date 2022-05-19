@@ -1,6 +1,7 @@
 package br.com.fesa.rotadagasosa.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,10 +40,24 @@ public class PromotionServiceImpl implements PromotionService {
 
 	@Override
 	public Promotion edit(Promotion promotion) throws PromotionException {
-		// TODO Auto-generated method stub
-		return null;
+		promotionValidator.validatePromotionFields(promotion);
+		
+		if(promotion.getId() == null) { throw new PromotionException(PromotionsMessage.ERROR_ID_NULL); }
+		
+		Promotion promotionById = getById(promotion.getId());
+		
+		if(promotionById == null) { throw new PromotionException(PromotionsMessage.ERROR_NULL); }
+		
+		Promotion promotionByName = getByName(promotion.getName());
+		
+		if((promotionByName != null) && (!promotionByName.getId().equals(promotionById.getId()))) { throw new PromotionException(PromotionsMessage.ERROR_DUPLICATE); }
+		
+		promotionById.setName(promotion.getName());
+		promotionById.setVisible(promotion.getVisible());
+		
+		return promotionRepository.save(promotionById);
 	}
-
+	
 	@Override
 	public void delete(Long id) throws PromotionException {
 		if(id == null) { throw new PromotionException(PromotionsMessage.ERROR_ID_NULL); } 
@@ -57,6 +72,14 @@ public class PromotionServiceImpl implements PromotionService {
 	
 	private Promotion getByName(String name) {
 		return promotionRepository.findByName(name);
+	}
+	
+	private Promotion getById(Long id) {
+		Optional<Promotion> promotion = promotionRepository.findById(id);
+		
+		if(promotion.isPresent() == false) { return null; }
+		
+		return promotion.get();
 	}
 
 }

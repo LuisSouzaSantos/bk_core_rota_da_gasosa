@@ -1,6 +1,7 @@
 package br.com.fesa.rotadagasosa.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,8 +40,22 @@ public class FlagServiceImpl implements FlagService {
 
 	@Override
 	public Flag edit(Flag flag) throws FlagException {
-		// TODO Auto-generated method stub
-		return null;
+		flagValidator.validateFlagFields(flag);
+		
+		if(flag.getId() == null) { throw new FlagException(FlagMessage.ERROR_ID_NULL); }
+		
+		Flag flagById = getById(flag.getId());
+		
+		if(flagById == null) { throw new FlagException(FlagMessage.ERROR_NULL); }
+		
+		Flag retrievedFlagByName = getByName(flag.getName());
+		
+		if((retrievedFlagByName != null) && (!flag.getId().equals(flagById.getId()))) { throw new FlagException(FlagMessage.ERROR_DUPLICATE); }
+			
+		flagById.setName(flag.getName());
+		flagById.setVisible(flag.getVisible());
+		
+		return flagRepository.save(flagById);
 	}
 
 	@Override
@@ -57,6 +72,14 @@ public class FlagServiceImpl implements FlagService {
 	
 	private Flag getByName(String name) {
 		return flagRepository.findByName(name);
+	}
+	
+	private Flag getById(Long id) {
+		Optional<Flag> flag = flagRepository.findById(id);
+		
+		if(flag.isPresent() == false) { return null; }
+		
+		return flag.get();
 	}
 
 }

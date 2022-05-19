@@ -1,6 +1,7 @@
 package br.com.fesa.rotadagasosa.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,10 +40,24 @@ public class FuelServiceImp implements FuelService {
 
 	@Override
 	public Fuel edit(Fuel fuel) throws FuelException {
-		// TODO Auto-generated method stub
-		return null;
+		fuelValidator.validateFuelFields(fuel);
+		
+		if(fuel.getId() == null) { throw new FuelException(FuelMesage.ERROR_ID_NULL); }
+		
+		Fuel fuelById = getById(fuel.getId());
+		
+		if(fuelById == null) { throw new FuelException(FuelMesage.ERROR_NULL); }
+		
+		Fuel fuelByName = getByName(fuel.getName());
+		
+		if((fuelByName != null) && (!fuelByName.getId().equals(fuelById.getId()))) { throw new FuelException(FuelMesage.ERROR_DUPLICATE); }
+		
+		fuelById.setName(fuel.getName());
+		fuelById.setVisible(fuel.getVisible());
+		
+		return fuelRepository.save(fuelById);
 	}
-
+	
 	@Override
 	public void delete(Long id) throws FuelException {
 		if(id == null) { throw new FuelException(FuelMesage.ERROR_ID_NULL); }
@@ -57,6 +72,14 @@ public class FuelServiceImp implements FuelService {
 
 	private Fuel getByName(String name) {
 		return fuelRepository.findByName(name);
+	}
+	
+	private Fuel getById(Long id) {
+		Optional<Fuel> fuel = fuelRepository.findById(id);
+		
+		if(fuel.isPresent() == false) { return null; }
+		
+		return fuel.get();
 	}
 		
 }

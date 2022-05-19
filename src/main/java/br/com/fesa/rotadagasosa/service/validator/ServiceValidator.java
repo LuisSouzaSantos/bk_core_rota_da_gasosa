@@ -24,8 +24,8 @@ public class ServiceValidator {
 		if(form.getName() == null || form.getName().isEmpty()) { throw new ServiceException(ServiceMessage.ERROR_FORM_NAME); }
 	}
 	
-	public void validateServiceFields(Service service) throws ServiceException {
-		Set<ConstraintViolation<Service>> violations = validator.validate(service);
+	public void validateServiceFields(br.com.fesa.rotadagasosa.model.Service service) throws ServiceException {
+		Set<ConstraintViolation<br.com.fesa.rotadagasosa.model.Service>> violations = validator.validate(service);
 
 		if(violations.isEmpty() == false) { throw new ServiceException(ServiceMessage.ERROR_FIELDS); }
 	}
