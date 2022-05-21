@@ -22,10 +22,10 @@ public class FlagServiceImpl implements FlagService {
 	
 	@Autowired
 	private FlagValidator flagValidator;
-
+	
 	@Override
 	public Flag save(BaseAdministratorItemForm form) throws FlagException {
-		flagValidator.validateForm(form);
+		//flagValidator.validateForm(form);
 		
 		Flag retrievedFlagByName = getByName(form.getName());
 		
@@ -40,7 +40,7 @@ public class FlagServiceImpl implements FlagService {
 
 	@Override
 	public Flag edit(Flag flag) throws FlagException {
-		flagValidator.validateFlagFields(flag);
+		//flagValidator.validateFlagFields(flag);
 		
 		if(flag.getId() == null) { throw new FlagException(FlagMessage.ERROR_ID_NULL); }
 		
@@ -50,7 +50,7 @@ public class FlagServiceImpl implements FlagService {
 		
 		Flag retrievedFlagByName = getByName(flag.getName());
 		
-		if((retrievedFlagByName != null) && (!flag.getId().equals(flagById.getId()))) { throw new FlagException(FlagMessage.ERROR_DUPLICATE); }
+		if((retrievedFlagByName != null) && (!flag.getId().equals(retrievedFlagByName.getId()))) { throw new FlagException(FlagMessage.ERROR_DUPLICATE); }
 			
 		flagById.setName(flag.getName());
 		flagById.setVisible(flag.getVisible());

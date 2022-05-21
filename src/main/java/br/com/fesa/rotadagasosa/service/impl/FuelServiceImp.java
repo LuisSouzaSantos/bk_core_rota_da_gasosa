@@ -25,7 +25,7 @@ public class FuelServiceImp implements FuelService {
 
 	@Override
 	public Fuel save(BaseAdministratorItemForm form) throws FuelException {
-		fuelValidator.validateForm(form);
+		//fuelValidator.validateForm(form);
 		
 		Fuel retrivedFuelByName = getByName(form.getName());
 		
@@ -40,7 +40,7 @@ public class FuelServiceImp implements FuelService {
 
 	@Override
 	public Fuel edit(Fuel fuel) throws FuelException {
-		fuelValidator.validateFuelFields(fuel);
+		//fuelValidator.validateFuelFields(fuel);
 		
 		if(fuel.getId() == null) { throw new FuelException(FuelMesage.ERROR_ID_NULL); }
 		

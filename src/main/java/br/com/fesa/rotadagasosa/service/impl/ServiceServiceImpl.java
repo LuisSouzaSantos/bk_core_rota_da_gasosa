@@ -24,7 +24,7 @@ public class ServiceServiceImpl implements ServiceService {
 
 	@Override
 	public Service save(BaseAdministratorItemForm form) throws ServiceException {
-		serviceValidator.validateForm(form);
+		//serviceValidator.validateForm(form);
 		
 		Service retrivedServiceByName = getByName(form.getName());
 		
@@ -39,7 +39,7 @@ public class ServiceServiceImpl implements ServiceService {
 
 	@Override
 	public Service edit(Service service) throws ServiceException {
-		serviceValidator.validateServiceFields(service);
+		//serviceValidator.validateServiceFields(service);
 		
 		if(service.getId() == null) { throw new ServiceException(ServiceMessage.ERROR_ID_NULL); }
 		

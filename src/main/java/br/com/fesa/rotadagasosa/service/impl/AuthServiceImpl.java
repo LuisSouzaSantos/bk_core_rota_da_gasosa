@@ -28,7 +28,7 @@ public class AuthServiceImpl implements AuthService {
 	
 	@Override
 	public Login authentication(Login login) throws LoginException {
-		loginValidator.validateFields(login);
+		//loginValidator.validateFields(login);
 		
 		if(login == null) { throw new LoginException(AuthenticationMessage.LOGIN_NOT_FOUND, HttpStatus.UNAUTHORIZED); }
 		
