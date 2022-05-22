@@ -18,7 +18,7 @@ public class TokenServiceImpl implements TokenService {
 	public String generateToken(Authentication authentication) {
 		Login login = (Login) authentication.getPrincipal();
 		Date today = new Date();
-		Date expirationDate = new Date(today.getTime() + 10000L);
+		Date expirationDate = new Date(today.getTime() + 1000000L);
 		
 		return Jwts.builder()
 				.setIssuer(login.getCredentialsType().toString())
