@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: br.com.fesa.rotadagasosa.selenium.CT01Validartela
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.225 s <<< FAILURE! - in br.com.fesa.rotadagasosa.selenium.CT01Validartela
+testeN2 on testeN2(br.com.fesa.rotadagasosa.selenium.CT01Validartela)(br.com.fesa.rotadagasosa.selenium.CT01Validartela)  Time elapsed: 0.168 s  <<< FAILURE!
+java.lang.IllegalStateException: The driver executable is a directory: C:\Users\Lenovo\Downloads\chromedriver_win32 (3)
+	at br.com.fesa.rotadagasosa.selenium.CT01Validartela.setUp(CT01Validartela.java:33)
+
+testeN2 on testeN2(br.com.fesa.rotadagasosa.selenium.CT01Validartela)(br.com.fesa.rotadagasosa.selenium.CT01Validartela)  Time elapsed: 0.169 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "this.driver" is null
+	at br.com.fesa.rotadagasosa.selenium.CT01Validartela.tearDown(CT01Validartela.java:44)
+

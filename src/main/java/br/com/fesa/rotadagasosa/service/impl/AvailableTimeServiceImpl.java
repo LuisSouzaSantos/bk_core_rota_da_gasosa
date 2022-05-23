@@ -1,7 +1,6 @@
 package br.com.fesa.rotadagasosa.service.impl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,20 +42,14 @@ public class AvailableTimeServiceImpl implements AvailableTimeService {
 	public AvailableTime edit(AvailableTime availableTime) throws AvailableTimeException {
 		availableTimeValidator.validateAvailableTimeFields(availableTime);
 		
-		if(availableTime.getId() == null) { throw new AvailableTimeException(AvailableTimeMessage.ERROR_ID_NULL); }
-		
-		AvailableTime retrievedAvailableTimeById = getById(availableTime.getId());
-		
-		if(retrievedAvailableTimeById == null) { throw new AvailableTimeException(AvailableTimeMessage.ERROR_NULL); }
-		
 		AvailableTime retrievedAvailableTimeByName = getByName(availableTime.getName());
 		
 		if((retrievedAvailableTimeByName != null) && !availableTime.getId().equals(retrievedAvailableTimeByName.getId())) { throw new AvailableTimeException(AvailableTimeMessage.ERROR_DUPLICATE); }
 		
-		retrievedAvailableTimeById.setName(availableTime.getName());
-		retrievedAvailableTimeById.setVisible(availableTime.getVisible());
+		retrievedAvailableTimeByName.setName(availableTime.getName());
+		retrievedAvailableTimeByName.setVisible(availableTime.getVisible());
 		
-		return availableTimeRepository.save(retrievedAvailableTimeById);
+		return availableTimeRepository.save(retrievedAvailableTimeByName);
 	}
 
 	@Override
@@ -73,14 +66,6 @@ public class AvailableTimeServiceImpl implements AvailableTimeService {
 	
 	private AvailableTime getByName(String name) {
 		return availableTimeRepository.findByName(name);
-	}
-	
-	private AvailableTime getById(Long id) {
-		Optional<AvailableTime> availableTime = availableTimeRepository.findById(id);
-		
-		if(availableTime.isPresent() == false) { return null; }
-		
-		return availableTime.get();
 	}
 
 }

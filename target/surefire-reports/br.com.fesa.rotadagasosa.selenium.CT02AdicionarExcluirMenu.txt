@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: br.com.fesa.rotadagasosa.selenium.CT02AdicionarExcluirMenu
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.31 s <<< FAILURE! - in br.com.fesa.rotadagasosa.selenium.CT02AdicionarExcluirMenu
+t2adicionarexcluirmenu on t2adicionarexcluirmenu(br.com.fesa.rotadagasosa.selenium.CT02AdicionarExcluirMenu)(br.com.fesa.rotadagasosa.selenium.CT02AdicionarExcluirMenu)  Time elapsed: 0.175 s  <<< FAILURE!
+java.lang.IllegalStateException: The driver executable is a directory: C:\Users\Lenovo\Downloads\chromedriver_win32 (3)
+	at br.com.fesa.rotadagasosa.selenium.CT02AdicionarExcluirMenu.setUp(CT02AdicionarExcluirMenu.java:36)
+
+t2adicionarexcluirmenu on t2adicionarexcluirmenu(br.com.fesa.rotadagasosa.selenium.CT02AdicionarExcluirMenu)(br.com.fesa.rotadagasosa.selenium.CT02AdicionarExcluirMenu)  Time elapsed: 0.179 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "this.driver" is null
+	at br.com.fesa.rotadagasosa.selenium.CT02AdicionarExcluirMenu.tearDown(CT02AdicionarExcluirMenu.java:43)
+
