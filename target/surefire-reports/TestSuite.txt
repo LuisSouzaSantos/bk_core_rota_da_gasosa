@@ -1,0 +1,191 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 17, Errors: 0, Skipped: 0, Time elapsed: 6.049 s <<< FAILURE! - in TestSuite
+allFuel on allFuel(br.com.fesa.rotadagasosa.FuelServiceTests)(br.com.fesa.rotadagasosa.FuelServiceTests)  Time elapsed: 3.001 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'fuelService'! Cause: the type 'FuelService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+errorEditFuel on errorEditFuel(br.com.fesa.rotadagasosa.FuelServiceTests)(br.com.fesa.rotadagasosa.FuelServiceTests)  Time elapsed: 0.003 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'fuelService'! Cause: the type 'FuelService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+successEditFuel on successEditFuel(br.com.fesa.rotadagasosa.FuelServiceTests)(br.com.fesa.rotadagasosa.FuelServiceTests)  Time elapsed: 0.003 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'fuelService'! Cause: the type 'FuelService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+errorSaveFuel on errorSaveFuel(br.com.fesa.rotadagasosa.FuelServiceTests)(br.com.fesa.rotadagasosa.FuelServiceTests)  Time elapsed: 0 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'fuelService'! Cause: the type 'FuelService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+successSaveFuel on successSaveFuel(br.com.fesa.rotadagasosa.FuelServiceTests)(br.com.fesa.rotadagasosa.FuelServiceTests)  Time elapsed: 0.003 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'fuelService'! Cause: the type 'FuelService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+allFlag on allFlag(br.com.fesa.rotadagasosa.FlagServiceTests)(br.com.fesa.rotadagasosa.FlagServiceTests)  Time elapsed: 0.127 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'flagService'! Cause: the type 'FlagService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+errorEditFlag on errorEditFlag(br.com.fesa.rotadagasosa.FlagServiceTests)(br.com.fesa.rotadagasosa.FlagServiceTests)  Time elapsed: 0 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'flagService'! Cause: the type 'FlagService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+successEditFlag on successEditFlag(br.com.fesa.rotadagasosa.FlagServiceTests)(br.com.fesa.rotadagasosa.FlagServiceTests)  Time elapsed: 0.002 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'flagService'! Cause: the type 'FlagService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+errorSaveFlag on errorSaveFlag(br.com.fesa.rotadagasosa.FlagServiceTests)(br.com.fesa.rotadagasosa.FlagServiceTests)  Time elapsed: 0.002 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'flagService'! Cause: the type 'FlagService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+successSaveFlag on successSaveFlag(br.com.fesa.rotadagasosa.FlagServiceTests)(br.com.fesa.rotadagasosa.FlagServiceTests)  Time elapsed: 0.045 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'flagService'! Cause: the type 'FlagService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+errorAuthentication on errorAuthentication(br.com.fesa.rotadagasosa.LoginServiceTests)(br.com.fesa.rotadagasosa.LoginServiceTests)  Time elapsed: 0.246 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'administratorService'! Cause: the type 'AdministratorService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+sucessAuthentication on sucessAuthentication(br.com.fesa.rotadagasosa.LoginServiceTests)(br.com.fesa.rotadagasosa.LoginServiceTests)  Time elapsed: 0.003 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'administratorService'! Cause: the type 'AdministratorService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+errorEditService on errorEditService(br.com.fesa.rotadagasosa.ServiceServiceTests)(br.com.fesa.rotadagasosa.ServiceServiceTests)  Time elapsed: 0.108 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'serviceService'! Cause: the type 'ServiceService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+allFlag on allFlag(br.com.fesa.rotadagasosa.ServiceServiceTests)(br.com.fesa.rotadagasosa.ServiceServiceTests)  Time elapsed: 0.002 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'serviceService'! Cause: the type 'ServiceService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+successSaveService on successSaveService(br.com.fesa.rotadagasosa.ServiceServiceTests)(br.com.fesa.rotadagasosa.ServiceServiceTests)  Time elapsed: 0 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'serviceService'! Cause: the type 'ServiceService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+successEditService on successEditService(br.com.fesa.rotadagasosa.ServiceServiceTests)(br.com.fesa.rotadagasosa.ServiceServiceTests)  Time elapsed: 0 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'serviceService'! Cause: the type 'ServiceService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+
+errorSaveService on errorSaveService(br.com.fesa.rotadagasosa.ServiceServiceTests)(br.com.fesa.rotadagasosa.ServiceServiceTests)  Time elapsed: 0.003 s  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+
+Cannot instantiate @InjectMocks field named 'serviceService'! Cause: the type 'ServiceService' is an interface.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+Examples of correct usage of @InjectMocks:
+   @InjectMocks Service service = new Service();
+   @InjectMocks Service service;
+   //and... don't forget about some @Mocks for injection :)
+
+

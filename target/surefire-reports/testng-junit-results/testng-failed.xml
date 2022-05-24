@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" junit="true" name="Failed suite [Surefire suite]" verbose="0">
+  <test junit="true" name="Surefire test(failed)">
+    <classes>
+      <class name="br.com.fesa.rotadagasosa.FuelServiceTests">
+        <methods>
+          <include name="errorEditFuel"/>
+          <include name="successEditFuel"/>
+          <include name="errorSaveFuel"/>
+          <include name="successSaveFuel"/>
+          <include name="allFuel"/>
+        </methods>
+      </class> <!-- br.com.fesa.rotadagasosa.FuelServiceTests -->
+      <class name="br.com.fesa.rotadagasosa.FlagServiceTests">
+        <methods>
+          <include name="allFlag"/>
+          <include name="errorSaveFlag"/>
+          <include name="successSaveFlag"/>
+          <include name="errorEditFlag"/>
+          <include name="successEditFlag"/>
+        </methods>
+      </class> <!-- br.com.fesa.rotadagasosa.FlagServiceTests -->
+      <class name="br.com.fesa.rotadagasosa.LoginServiceTests">
+        <methods>
+          <include name="errorAuthentication"/>
+          <include name="sucessAuthentication"/>
+        </methods>
+      </class> <!-- br.com.fesa.rotadagasosa.LoginServiceTests -->
+      <class name="br.com.fesa.rotadagasosa.ServiceServiceTests">
+        <methods>
+          <include name="errorSaveService"/>
+          <include name="successSaveService"/>
+          <include name="successEditService"/>
+          <include name="allFlag"/>
+          <include name="errorEditService"/>
+        </methods>
+      </class> <!-- br.com.fesa.rotadagasosa.ServiceServiceTests -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
